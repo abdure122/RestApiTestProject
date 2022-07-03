@@ -25,9 +25,12 @@ class UserRequest extends FormRequest
     {
         return [
             'name'=>'required',
+            'email'=>'email|required',
+
             'date_of_birth'=>'required',
             'gender'=>'required',
-            'salary'=>'required'
+            'salary'=>'required',
+            'password'=>'required|min:5',
         ];
     }
 }

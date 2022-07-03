@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     public function index()
     {
       $employees= new UserResource(User::all()) ;
-      return response()->json($employees);
+      return $employees;
     }
 
     /**

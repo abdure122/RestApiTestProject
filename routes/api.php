@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,3 +19,7 @@ use App\Http\Controllers\Api\EmployeeController;
 //     return $request->user();
 // });
 Route::apiResource('/employee',EmployeeController::class);
+
+
+    Route::Post('/login',[AuthController::class,'login']);
+    Route::get('/logout',[AuthController::class,'logout']);
