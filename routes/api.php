@@ -21,5 +21,11 @@ use App\Http\Controllers\Api\AuthController;
 Route::apiResource('/employee',EmployeeController::class);
 
 
-    Route::Post('/login',[AuthController::class,'login']);
-    Route::get('/logout',[AuthController::class,'logout']);
+Route::Post('/login',[AuthController::class,'login']);
+
+Route::middleware('auth:sanctum')->get('/', function () {
+   Route::GET('/user',[AuthController::class,'user']);
+
+   Route::Post('/logout',[AuthController::class,'logout']);
+});
+    
